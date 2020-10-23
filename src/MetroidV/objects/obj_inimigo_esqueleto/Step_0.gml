@@ -130,6 +130,8 @@ switch(estado)
 		break;
 		
 	case "dead":
+	
+		velh = 0;
 		
 		if(sprite_index != spr_inimigo_esqueleto_dead)
 		{
