@@ -12,4 +12,4 @@ if(position_meeting(mouse_x, mouse_y, id))
 	}
 }
 
-image_speed = (img_spd / room_speed);
+image_speed = (img_spd / room_speed) * global.vel_mult;
