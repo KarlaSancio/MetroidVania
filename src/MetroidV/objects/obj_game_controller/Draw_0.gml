@@ -30,6 +30,32 @@ if(game_over)
 	
 	draw_set_alpha(1);
 	draw_set_color(-1);
+	
+	// Delay para o texto de game over
+	if(valor >= .85)
+	{
+	
+		contador = lerp(contador, 1, .01);
+		// Escrevendo Game Over
+		draw_set_alpha(contador);
+		draw_set_font(fnt_gameover);
+		draw_set_valign(1);
+		draw_set_halign(1);
+		//Sombra
+		draw_set_color(c_orange);
+		draw_text(meio_w + 1, meio_h + 1, "You Died");
+		//Texto
+		draw_set_color(merge_color(141, 21, 21));
+		draw_text(meio_w, meio_h, "You Died");
+		draw_set_font(-1);
+		
+		draw_text(meio_w, meio_h + 50, "Press BACKSPACE to restart");
+		
+		draw_set_valign(-1);
+		draw_set_halign(-1);
+		draw_set_alpha(-1);
+	}
+		
 }
 else
 {

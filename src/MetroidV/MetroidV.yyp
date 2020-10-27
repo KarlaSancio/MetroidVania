@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"fnt_gameover","path":"fonts/fnt_gameover/fnt_gameover.yy",},"order":0,},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},"order":1,},
     {"id":{"name":"spr_player_ataque1","path":"sprites/spr_player_ataque1/spr_player_ataque1.yy",},"order":0,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},

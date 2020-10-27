@@ -285,4 +285,4 @@ switch(estado)
 	}
 }
 
-if(keyboard_check(vk_backspace)) room_restart();
+if(keyboard_check(vk_backspace)) game_restart();
