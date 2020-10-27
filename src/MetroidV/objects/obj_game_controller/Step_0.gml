@@ -1,4 +1,4 @@
-if(keyboard_check(vk_up))
+if(game_over)
 {
 	global.vel_mult = .5;	
 }
@@ -6,4 +6,12 @@ else
 {
 	global.vel_mult = 1;	
 }
-// tempo vd 4:41
+
+if(keyboard_check(vk_up))
+{
+	game_over = true;	
+}
+else
+{
+	game_over = false;	
+}

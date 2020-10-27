@@ -16,7 +16,7 @@ if(!chao)
 {
 	if(velv < max_velv * 2)
 	{
-		velv += GRAVIDADE * massa;
+		velv += GRAVIDADE * massa * global.vel_mult;
 	}
 }
 
@@ -252,6 +252,15 @@ switch(estado)
 		break;
 		
 	case "dead":
+	
+		// Checando se o controlador existe
+		if(instance_exists(obj_game_controller))
+		{
+			with(obj_game_controller)
+			{
+				game_over = true;	
+			}
+		}
 	
 		velh = 0;
 		

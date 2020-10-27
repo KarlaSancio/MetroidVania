@@ -2,7 +2,7 @@ var chao = place_meeting(x, y + 1, obj_block);
 
 if(!chao)
 {
-	velv += GRAVIDADE * massa;	
+	velv += GRAVIDADE * massa * global.vel_mult;	
 }
 
 //if(mouse_check_button_pressed(mb_right))
@@ -51,7 +51,7 @@ switch(estado)
 		if(sprite_index != spr_inimigo_esqueleto_walk)
 		{
 			image_index = 0;	
-			velh = choose(1, -1);
+			velh = choose(1, -1) * global.vel_mult;
 		}
 		sprite_index = spr_inimigo_esqueleto_walk;
 		
