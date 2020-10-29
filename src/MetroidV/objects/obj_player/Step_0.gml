@@ -41,6 +41,7 @@ switch(estado)
 		
 		else if(jump || velv != 0)
 		{
+			
 			estado = "pulando";
 			velv = (-max_velv * jump);
 			image_index = 0;
@@ -225,6 +226,9 @@ switch(estado)
 		{
 			sprite_index = spr_player_hit;
 			image_index = 0;
+			
+			// Tremendo a tela
+			screenshake(3);
 		}
 		
 		// Ficando parado ao levar dano
