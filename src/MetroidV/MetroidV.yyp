@@ -38,6 +38,7 @@
     {"id":{"name":"spr_dano","path":"sprites/spr_dano/spr_dano.yy",},"order":5,},
     {"id":{"name":"spr_bg","path":"sprites/spr_bg/spr_bg.yy",},"order":2,},
     {"id":{"name":"spr_inimigo_esqueleto_dead","path":"sprites/spr_inimigo_esqueleto_dead/spr_inimigo_esqueleto_dead.yy",},"order":2,},
+    {"id":{"name":"tl_background","path":"tilesets/tl_background/tl_background.yy",},"order":1,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [

@@ -1,5 +1,4 @@
 {
-  "name": "tl_level",
   "spriteId": {
     "name": "spr_tile01",
     "path": "sprites/spr_tile01/spr_tile01.yy",
@@ -331,6 +330,7 @@
     "path": "folders/Tile Sets.yy",
   },
   "resourceVersion": "1.0",
+  "name": "tl_level",
   "tags": [],
   "resourceType": "GMTileSet",
 }
