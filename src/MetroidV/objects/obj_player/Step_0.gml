@@ -1,3 +1,9 @@
+// Checando se o player está em transição
+if(instance_exists(obj_transicao))
+{
+	exit;	
+}
+
 // Iniciando Variaveis
 var right, left, jump, attack, dash;
 var chao = place_meeting(x, y + 1, obj_block);
