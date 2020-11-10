@@ -34,7 +34,7 @@ switch(estado)
 		
 		// Condição de troca de estado
 		// Movendo
-		if(right || left)
+		if(velh != 0)
 		{
 			estado = "movendo";		
 		}
