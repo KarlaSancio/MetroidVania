@@ -17,6 +17,7 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":2,},
     {"id":{"name":"spr_inimigo_frog_idle","path":"sprites/spr_inimigo_frog_idle/spr_inimigo_frog_idle.yy",},"order":0,},
     {"id":{"name":"obj_game_controller","path":"objects/obj_game_controller/obj_game_controller.yy",},"order":6,},
+    {"id":{"name":"spr_player_ataque_ar1","path":"sprites/spr_player_ataque_ar1/spr_player_ataque_ar1.yy",},"order":3,},
     {"id":{"name":"spr_player_ataque3","path":"sprites/spr_player_ataque3/spr_player_ataque3.yy",},"order":2,},
     {"id":{"name":"tl_level","path":"tilesets/tl_level/tl_level.yy",},"order":0,},
     {"id":{"name":"spr_block","path":"sprites/spr_block/spr_block.yy",},"order":0,},

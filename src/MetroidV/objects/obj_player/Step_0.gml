@@ -118,6 +118,11 @@ switch(estado)
 			}
 		}
 		// Condição de troca de estado
+		if(attack)
+		{
+			estado = "ataque aereo";	
+		}
+		
 		if(chao) // Se eu toquei no chão logo depois de cair
 		{
 			estado = "parado"	
@@ -126,6 +131,48 @@ switch(estado)
 		
 		break;
 	#endregion;
+	
+	#region ataque aereo
+	case "ataque aereo":
+		//Checando se troquei de sprite
+		if(sprite_index != spr_player_ataque_ar1)
+		{
+			sprite_index = spr_player_ataque_ar1;
+			image_index = 0;
+		}
+		
+		// Criando o objeto de dano
+		if(image_index >= 2 && dano == noone && posso)
+		{
+			dano		= instance_create_layer(x + sprite_width/2 + velh * 2, y - sprite_height/3, layer, obj_dano);	
+			dano.dano	= ataque * ataque_mult;
+			dano.pai	= id;
+			posso		= false;
+		}
+		
+		// Saindo do estado
+		if(image_index >= image_number - 1)// Terminou a animação
+		{
+			estado = "pulando";
+			posso = true;
+			if(dano)
+			{
+				instance_destroy(dano, false);
+				dano = noone;
+			}
+		}
+		if(chao)// Se eu toquei no chão
+		{
+			estado = "parado";
+			posso = true;
+			if(dano)
+			{
+				instance_destroy(dano, false);
+				dano = noone;
+			}
+		}
+		
+		break;
 	
 	#region ataque
 	case "ataque":
@@ -147,10 +194,10 @@ switch(estado)
 		// Criando o objeto de dano
 		if(image_index >= 2 && dano == noone && posso)
 		{
-			dano = instance_create_layer(x + sprite_width/2, y - sprite_height/3, layer, obj_dano);	
-			dano.dano = ataque * ataque_mult;
-			dano.pai = id;
-			posso = false;
+			dano		= instance_create_layer(x + sprite_width/2, y - sprite_height/3, layer, obj_dano);	
+			dano.dano	= ataque * ataque_mult;
+			dano.pai	= id;
+			posso		= false;
 		}
 		
 		// Configurando com o buff
@@ -218,7 +265,7 @@ switch(estado)
 		velh = image_xscale * dash_vel;
 		
 		// Saindo do estado
-		if(image_index >= image_number - 1)
+		if(image_index >= image_number - 1 || !chao)
 		{
 			estado = "parado";	
 		}
