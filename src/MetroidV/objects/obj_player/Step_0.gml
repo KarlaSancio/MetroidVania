@@ -54,9 +54,7 @@ switch(estado)
 		}
 		else if(attack)
 		{
-			estado = "ataque";
-			velh = 0;
-			image_index = 0;
+			inicia_ataque(chao);
 		}
 		else if(dash)
 		{
@@ -88,9 +86,7 @@ switch(estado)
 		}
 		else if(attack)
 		{
-			estado = "ataque";
-			velh = 0;
-			image_index = 0;
+			inicia_ataque(chao);
 		}
 		else if(dash)
 		{
@@ -120,7 +116,7 @@ switch(estado)
 		// Condição de troca de estado
 		if(attack)
 		{
-			estado = "ataque aereo";	
+			inicia_ataque(chao);	
 		}
 		
 		if(chao) // Se eu toquei no chão logo depois de cair
@@ -131,6 +127,53 @@ switch(estado)
 		
 		break;
 	#endregion;
+	
+	#region ataque aereo para baixo
+	
+	case "ataque aereo down":
+	
+		velv += .5;
+		if(!ataque_down)
+		{
+			sprite_index = spr_player_ataque_ar_down_ready;
+			image_index = 0;
+			ataque_down = true;
+		}
+		
+		// Indo para o loop
+		if(sprite_index == spr_player_ataque_ar_down_ready)
+		{
+			// Checar se já passou bastante tempo da animação
+			if(image_index > .06)
+			{
+				sprite_index = spr_player_ataque_ar_down_loop;
+				image_index = 0;
+			}
+		}
+		
+		// Encerrando a animação
+		if(chao)
+		{
+			if(sprite_index != spr_player_ataque_ar_down_end)
+			{
+				sprite_index = spr_player_ataque_ar_down_end;
+				image_index = 0;
+			}
+			else // Saindo do estado
+			{
+				if(image_index >= image_number - .2)
+				{
+					estado = "parado";
+					ataque_down = false;
+				}
+			}
+		}
+		
+		
+		
+		break;
+	
+	#endregion
 	
 	#region ataque aereo
 	case "ataque aereo":
@@ -173,6 +216,7 @@ switch(estado)
 		}
 		
 		break;
+	#endregion
 	
 	#region ataque
 	case "ataque":

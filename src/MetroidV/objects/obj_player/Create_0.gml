@@ -25,3 +25,31 @@ posso = true;
 ataque_mult = 1;
 
 ataque_buff = room_speed;
+ataque_down = false;
+
+//Metodo para iniciar o ataque
+/// @method inicia_ataque(chao)
+/// @arg {bool} chao
+inicia_ataque = function(chao)
+{
+	if(chao)
+	{
+		estado = "ataque";
+		velh = 0;
+		image_index = 0;
+	}
+	else // Não estou no chao
+	{
+		if(keyboard_check(ord("S")))
+		{
+			estado = "ataque aereo down";
+			velh = 0;
+			image_index = 0;
+		}
+		else
+		{
+			estado = "ataque aereo";
+			image_index = 0;
+		}
+	}
+}
