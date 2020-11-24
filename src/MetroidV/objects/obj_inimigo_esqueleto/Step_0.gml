@@ -103,6 +103,7 @@ switch(estado)
 		
 	case "hit":
 	
+		velh = 0;
 		if(sprite_index != spr_inimigo_esqueleto_hit)
 		{
 			// Resetando a imagem
