@@ -4,6 +4,18 @@ if(instance_exists(obj_transicao))
 	exit;	
 }
 
+// Controle de invencibilidade
+if(invencivel && tempo_invencivel > 0)
+{
+	tempo_invencivel--;	
+	image_alpha = max(sin(get_timer()/100000), 0.2);// faz o player "piscar" quando está invencivel
+}
+else
+{
+	invencivel = false;
+	image_alpha = 1;
+}
+
 // Iniciando Variaveis
 var right, left, jump, attack, dash;
 var chao = place_meeting(x, y + 1, obj_block);
@@ -328,6 +340,10 @@ switch(estado)
 			
 			// Tremendo a tela
 			screenshake(3);
+			
+			//Deixando invencivel
+			invencivel = true;
+			tempo_invencivel = invencivel_timer;
 		}
 		
 		// Ficando parado ao levar dano
@@ -387,5 +403,7 @@ switch(estado)
 		estado = "parado";	
 	}
 }
+
+show_debug_message(tempo_invencivel);
 
 if(keyboard_check(vk_backspace)) game_restart();

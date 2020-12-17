@@ -7,7 +7,7 @@ cam.alvo = id;
 // Inherit the parent event
 event_inherited();
 
-vida_max = 2;
+vida_max = 3;
 vida_atual = vida_max;
 
 max_velh = 4;
@@ -26,6 +26,10 @@ ataque_mult = 1;
 
 ataque_buff = room_speed;
 ataque_down = false;
+
+invencivel = false;
+invencivel_timer = room_speed * 3;
+tempo_invencivel = invencivel_timer;
 
 //Metodo para iniciar o ataque
 /// @method inicia_ataque(chao)

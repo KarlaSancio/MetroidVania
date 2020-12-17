@@ -9,6 +9,12 @@ for(var i = 0; i < quantidade; i++)
 	// Checando o atual
 	var atual = outro_lista[| i];
 	
+	// Checando se o alvo atual esta invencivel
+	if(atual.invencivel)
+	{
+		continue;//isso permite que o dano ignore o alvo, não aplicando dano a ele	
+	}
+	
 	//show_message(object_get_name(atual.object_index));
 	// Checando se a colisão não é entre filho e pai
 	if(object_get_parent(atual.object_index) != object_get_parent(pai.object_index))
