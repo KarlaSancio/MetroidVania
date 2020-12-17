@@ -43,7 +43,21 @@ for(var i = 0; i < tam_lista; i++)
 
 ds_list_destroy(aplicar_dano);
 ds_list_destroy(outro_lista);
-instance_destroy();
+
+if(morrer)
+{
+	instance_destroy();
+}
+else
+{
+	y = pai.y - pai.sprite_height/2;
+	
+	if(quantidade)
+	{
+		instance_destroy();	
+	}
+}
+
 // Se eu estou tocando em alguem
 /*if(outro)
 {

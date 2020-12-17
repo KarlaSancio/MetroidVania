@@ -165,10 +165,20 @@ switch(estado)
 				{
 					estado = "parado";
 					ataque_down = false;
+					finaliza_ataque();
 				}
 			}
 		}
 		
+		// Criando o dano
+		if(sprite_index == spr_player_ataque_ar_down_ready && dano == noone && posso)
+		{
+			dano		= instance_create_layer(x + sprite_width/2 + velh * 2, y - sprite_height/2, layer, obj_dano);	
+			dano.dano	= ataque * ataque_mult;
+			dano.pai	= id;
+			dano.morrer = false;
+			posso		= false;
+		}
 		
 		
 		break;
@@ -198,11 +208,7 @@ switch(estado)
 		{
 			estado = "pulando";
 			posso = true;
-			if(dano)
-			{
-				instance_destroy(dano, false);
-				dano = noone;
-			}
+			finaliza_ataque();
 		}
 		if(chao)// Se eu toquei no chão
 		{
@@ -274,11 +280,7 @@ switch(estado)
 			combo = 0;
 			posso = true;
 			ataque_mult = 1;
-			if(dano)
-			{
-				instance_destroy(dano, false);
-				dano = noone;
-			}
+			finaliza_ataque();
 		}
 		if(dash)
 		{

@@ -53,3 +53,13 @@ inicia_ataque = function(chao)
 		}
 	}
 }
+
+finaliza_ataque =  function()
+{
+	posso = true;
+	if(dano)
+	{
+		instance_destroy(dano, false);
+		dano = noone;
+	}
+}
