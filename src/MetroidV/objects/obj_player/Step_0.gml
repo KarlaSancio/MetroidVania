@@ -170,6 +170,9 @@ switch(estado)
 			{
 				sprite_index = spr_player_ataque_ar_down_end;
 				image_index = 0;
+				
+				// Criando o screenshake direcional
+				screenshake(8, true, 270);
 			}
 			else // Saindo do estado
 			{
