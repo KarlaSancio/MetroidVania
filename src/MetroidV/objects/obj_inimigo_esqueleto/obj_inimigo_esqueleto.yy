@@ -32,8 +32,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Inimigos",
-    "path": "folders/Objects/Inimigos.yy",
+    "name": "Esqueleto",
+    "path": "folders/Objects/Inimigos/Esqueleto.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_inimigo_esqueleto",
