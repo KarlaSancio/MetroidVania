@@ -7,8 +7,8 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 0,
-  "bbox_right": 30,
+  "bbox_left": 1,
+  "bbox_right": 31,
   "bbox_top": 8,
   "bbox_bottom": 23,
   "HTile": false,
@@ -83,6 +83,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"8be8c371-13e2-4640-8c8a-9276f644e1bc","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Slime",
     "path": "folders/Sprites/Inimigos/Slime.yy",

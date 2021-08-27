@@ -4,10 +4,3 @@
 // Inherit the parent event
 event_inherited();
 
-max_velh = .5;
-
-massa = 2;
-
-ataque = 1;
-
-timer_estado = 0;
